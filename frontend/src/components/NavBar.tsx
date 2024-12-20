@@ -3,6 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next';
 import Logo from "../../assets/pictures/logo.png"
 import { Section } from './Section';
+import Link from 'next/link';
 
 export const NavBar = () => {
     const {t} = useTranslation();
@@ -11,10 +12,14 @@ export const NavBar = () => {
         <div className='NavBar flex justify-between items-center mt-2'>
             <div className='leftSide flex flex-row items-end'>
                 <div className='LogoImage mx-1'>
-                    <Image src={Logo} alt="YTDL"/>
+                    <Link href={"/"}>
+                        <Image src={Logo} alt="YTDL"/>
+                    </Link>
                 </div>
                 <div className='LogoText mx-1'>
-                    YTDL
+                    <Link href={"/"}>
+                        YTDL
+                    </Link>
                 </div>
             </div>
             <div className='rightSide'>

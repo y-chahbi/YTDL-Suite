@@ -12,11 +12,14 @@ import AppPreview from '../../assets/pictures/AppPreview.png'
 import { TbPlaylistAdd } from "react-icons/tb";
 import { FaYoutube } from "react-icons/fa";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 
 
 export default function Home() {
     const [hoverSingle, setHoverSingle] = useState("#979494");
     const [hoverPlaylist, setHoverPlaylist] = useState("#979494");
+    const router = useRouter()
+
     return (
         <div className="Home">
             <div className="Body flex justify-around items-center">
@@ -29,7 +32,8 @@ export default function Home() {
                             items-center flex flex-col justify-center
                             border-2 border-dashed  cursor-pointer border-[#6e41e2] mx-4"
                             onMouseOver={() => setHoverPlaylist("#6e41e2")}
-                            onMouseLeave={() => setHoverPlaylist("979494")}>
+                            onMouseLeave={() => setHoverPlaylist("979494")}
+                            onClick={() => {router.push('/playlist')}}>
                             <div className="IconHolder pt-4">
                                 <TbPlaylistAdd style={{fontSize: 70, color: hoverPlaylist,}}/>
                             </div>
@@ -41,7 +45,8 @@ export default function Home() {
                             border-[#6e41e2] items-center flex flex-col justify-center
                             border-2 border-dashed mx-4"
                             onMouseOver={() => setHoverSingle("#6e41e2")}
-                            onMouseLeave={() => setHoverSingle("979494")}>
+                            onMouseLeave={() => setHoverSingle("979494")}
+                            onClick={() => {router.push('/video')}}>
                             <div className="IconHolder pt-4">
                                 <FaYoutube  style={{fontSize: 70, color: hoverSingle}}/>
                             </div>
