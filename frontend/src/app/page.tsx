@@ -5,6 +5,9 @@ import bg from '../../assets/pictures/bg.png'
 import appStore from '../../assets/pictures/appStore.png'
 import playstore from '../../assets/pictures/googleplay.png'
 import Qr from '../../assets/pictures/qrCode.png'
+import facebook from '../../assets/pictures/facebook.png'
+import google from '../../assets/pictures/google.png'
+import vk from '../../assets/pictures/vk.png'
 import AppPreview from '../../assets/pictures/AppPreview.png'
 import { TbPlaylistAdd } from "react-icons/tb";
 import { FaYoutube } from "react-icons/fa";
@@ -52,26 +55,33 @@ export default function Home() {
             </div>
             <div className="Footer">
                 <div className="footerHolder flex justify-between items-end">
-                    <div className="Social"></div>
+                    <div className="Social flex justify-between w-4/12 bg-[#FAFAFA] px-8 py-4 rounded-md">
+                        <div className="text">Follow us on social</div>
+                        <ul className="Icons flex ">
+                            <li><Image width={"30"} src={vk} alt="vk"/></li>
+                            <li><Image width={"30"} src={facebook} alt="facebook"/></li>
+                            <li><Image width={"30"} src={google} alt="google"/></li>
+                        </ul>
+                    </div>
                     <div className="Preview flex justify-center items-end">
-                        <div className="Download">
+                        <div className="Download mb-2">
                             <p className="text-2xl mb-2">Download This App</p>
-                            <div className="DownloadHolder flex justify-center items-end">
-                                <div className="Store">
-                                    <div className="Appstore">
-                                        <Image src={appStore} alt="Appstore"/>
+                            <div className="DownloadHolder flex items-end">
+                                <div className="Store flex justify-between flex-col">
+                                    <div className="Appstore pt-4 pr-4">
+                                        <Image width={"120"} src={appStore} alt="Appstore"/>
                                     </div>
-                                    <div className="Playstore">
-                                        <Image src={playstore} alt="playstore"/>
+                                    <div className="Playstore pt-4 pr-4">
+                                        <Image width={"120"} src={playstore} alt="playstore"/>
                                     </div>
                                 </div>
-                                <div className="Qr">
-                                    <Image src={Qr} alt="Qr"/>
+                                <div className="Qr pl-4">
+                                    <Image width={"90"} src={Qr} alt="Qr"/>
                                 </div>
                             </div>
                         </div>
-                        <div className="previewApp">
-                            <Image src={AppPreview} alt="AppPreview"/>
+                        <div className="previewApp ml-10">
+                            <Image width={"160"} src={AppPreview} alt="AppPreview"/>
                         </div>
                     </div>
                 </div>
