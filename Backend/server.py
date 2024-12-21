@@ -1,6 +1,11 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs
+from http.server            import HTTPServer, BaseHTTPRequestHandler
+from urllib.parse           import urlparse, parse_qs
+from pytube                 import YouTube
 import json
+
+def DownloadVideo(Url):
+    yt = YouTube(Url)
+    print(yt.title)
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -19,6 +24,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         data = json.loads(post_data)
         if (parsed_url.path == "/video"):
             if "url" in data:
+                DownloadVideo(data["url"]);
                 response = {'message': data["url"]+" From video " + data["url"]}
             else:
                 response = {'message': "Url Not found"}
